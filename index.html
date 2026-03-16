@@ -165,18 +165,6 @@
             background: #f9f9f9;
         }
 
-        .schedule-table tr:hover {
-            background: #f0f0f0;
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 40px;
-            background: white;
-            border-radius: 10px;
-            color: #666;
-        }
-
         .stats {
             background: white;
             padding: 20px;
@@ -211,49 +199,29 @@
         }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .search-box input {
-                width: 100%;
-            }
-
-            .candidates-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                flex-direction: column;
-            }
+            header h1 { font-size: 1.8em; }
+            .search-box input { width: 100%; }
+            .candidates-grid { grid-template-columns: 1fr; }
+            .stats { flex-direction: column; }
         }
 
-        .print-button {
-            padding: 10px 20px;
-            background: #10b981;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.95em;
-            margin-top: 10px;
-        }
-
-        .print-button:hover {
-            background: #059669;
+        @media print {
+            .search-box, .stats, .footer, .qr-link { display: none !important; }
+            body { background: white; padding: 0; }
+            .candidate-card { box-shadow: none; border: 1px solid #eee; page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Mairi Darsgah</h1>
             <h1>📚 SSC 1st Annual Exam 2026</h1>
             <p><strong>Board of Intermediate & Secondary Education, Dera Ghazi Khan</strong></p>
-            <p>Candidate Roll Number Slips & Exam Schedule of Class 10 (G)</p>
+            <p>Candidate Roll Number Slips & Exam Schedule</p>
+            <p><strong>School:</strong> Mairi Darsgah • <strong>Contact:</strong> 0662550303 • <strong>Email:</strong> <a href="mailto:mairi darsgahkotaddu@gmail.com" style="color: inherit; text-decoration: underline;">mairi darsgahkotaddu@gmail.com</a> • <strong>WhatsApp:</strong> 03450541203</p>
             
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search by name or roll number...">
+                <input type="text" id="searchInput" placeholder="Search by name or roll number..." onkeyup="if(event.key==='Enter') searchCandidates()">
                 <button onclick="searchCandidates()">Search</button>
                 <button onclick="clearSearch()" style="background: #10b981;">Clear</button>
             </div>
@@ -261,7 +229,7 @@
 
         <div class="stats">
             <div class="stat-item">
-                <div class="stat-number" id="totalCandidates">21</div>
+                <div class="stat-number">21</div>
                 <div class="stat-label">Total Candidates</div>
             </div>
             <div class="stat-item">
@@ -269,12 +237,8 @@
                 <div class="stat-label">Exam Centers</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Subjects</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">30/Mar/2026</div>
-                <div class="stat-label">First Exam Date</div>
+                <div class="stat-number">30/Mar/26</div>
+                <div class="stat-label">Start Date</div>
             </div>
         </div>
 
@@ -282,7 +246,7 @@
 
         <div class="footer">
             <p>📋 Important: Please bring one passport-size colored photograph attested by the Head of Govt. H/S or H/SS on the first day of examinations.</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">© 2026 Board of Intermediate & Secondary Education, Dera Ghazi Khan</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">© 2026 BISE Dera Ghazi Khan</p>
         </div>
     </div>
 
@@ -291,50 +255,50 @@
             {
                 "candidate_name": "AIZA FATIMA",
                 "roll_no": "252974",
-                "center_allotted": "70: GOVT. GRADUATE COLLEGE FOR WOMEN K:OT ADU (1) (HALL)",
+                "center_allotted": "70: GOVT. GRADUATE COLLEGE FOR WOMEN KOT ADU (1) (HALL)",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230392755554"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=252974"
             },
             {
                 "candidate_name": "AMNA SALMAN",
                 "roll_no": "253150",
-                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL :",
+                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230373738990"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253150"
             },
             {
                 "candidate_name": "LABIBA ARIF",
                 "roll_no": "253044",
-                "center_allotted": "70: GOVT. GRADUATE COLLEGE FOR WOMEN K:OT ADU (1) (HALL)",
+                "center_allotted": "70: GOVT. GRADUATE COLLEGE FOR WOMEN KOT ADU (1) (HALL)",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230309136268"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253044"
             },
             {
                 "candidate_name": "NOOR SAKEENA",
@@ -343,110 +307,110 @@
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3250104195032"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253440"
             },
             {
                 "candidate_name": "MARYAM FATIMA",
                 "roll_no": "204244",
-                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL :",
+                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230399392356"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=204244"
             },
             {
                 "candidate_name": "MEERAB FATIMAH REHMAN",
                 "roll_no": "204429",
                 "center_allotted": "72: GOVT. GIRLS H/S MOCHI WALA KOT ADU (3) :HALL",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230323011822"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=204429"
             },
             {
                 "candidate_name": "HUDA ZAHOOR",
                 "roll_no": "204738",
-                "center_allotted": "74: GOVT. GIRLS H/S KOT ADU (5) (ROOMS) :",
+                "center_allotted": "74: GOVT. GIRLS H/S KOT ADU (5) (ROOMS)",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230346255566"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=204738"
             },
             {
                 "candidate_name": "IZZA MEHREEN",
                 "roll_no": "253742",
-                "center_allotted": "74: GOVT. GIRLS H/S KOT ADU (5) (ROOMS) :",
+                "center_allotted": "74: GOVT. GIRLS H/S KOT ADU (5) (ROOMS)",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230393318604"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253742"
             },
             {
                 "candidate_name": "RAZIA BALUCH",
                 "roll_no": "253619",
-                "center_allotted": "73: GOVT. GRADUATE COLLEGE FOR WOMEN K:OT ADU (4) (ROOMS)",
+                "center_allotted": "73: GOVT. GRADUATE COLLEGE FOR WOMEN KOT ADU (4) (ROOMS)",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3210289803120"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253619"
             },
             {
                 "candidate_name": "ANUM SHAHZADI",
                 "roll_no": "204346",
                 "center_allotted": "72: GOVT. GIRLS H/S MOCHI WALA KOT ADU (3) :HALL",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230317269534"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=204346"
             },
             {
                 "candidate_name": "AREEBA",
@@ -455,258 +419,232 @@
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230314173144"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253340"
             },
             {
                 "candidate_name": "MARYAM HAFEEZ",
                 "roll_no": "253233",
-                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL :",
+                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230351814424"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253233"
             },
             {
                 "candidate_name": "HUB-E-ZAHRA",
-                "roll_no": "253844",
-                "center_allotted": "74: GOVT. GIRLS H/S KOT ADU (5) (ROOMS) :",
+                "roll_no": "253563",
+                "center_allotted": "73: GOVT. GRADUATE COLLEGE FOR WOMEN KOT ADU (4) (ROOMS)",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230325413154"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253563"
             },
             {
-                "candidate_name": "KHADIJA BIBI",
-                "roll_no": "253528",
-                "center_allotted": "73: GOVT. GRADUATE COLLEGE FOR WOMEN K:OT ADU (4) (ROOMS)",
+                "candidate_name": "UNAIZA BILAL",
+                "roll_no": "253833",
+                "center_allotted": "74: GOVT. GIRLS H/S KOT ADU (5) (ROOMS)",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
                     { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230356534562"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=253833"
             },
             {
-                "candidate_name": "MEHAK FATIMA",
-                "roll_no": "204535",
-                "center_allotted": "73: GOVT. GRADUATE COLLEGE FOR WOMEN K:OT ADU (4) (ROOMS)",
+                "candidate_name": "NOSHABA NOREEN",
+                "roll_no": "204619",
+                "center_allotted": "73: GOVT. GRADUATE COLLEGE FOR WOMEN KOT ADU (4) (ROOMS)",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230355318110"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=204619"
             },
             {
-                "candidate_name": "MEHAK FATIMA",
-                "roll_no": "204642",
-                "center_allotted": "74: GOVT. GIRLS H/S KOT ADU (5) (ROOMS) :",
+                "candidate_name": "WANIA MARYUM",
+                "roll_no": "204314",
+                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230351546254"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=204314"
             },
             {
-                "candidate_name": "NOOR FATIMA",
-                "roll_no": "253043",
-                "center_allotted": "70: GOVT. GRADUATE COLLEGE FOR WOMEN K:OT ADU (1) (HALL)",
+                "candidate_name": "ALISHBA KHAN",
+                "roll_no": "237470",
+                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "COMPUTER SCI", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230346153124"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=237470"
             },
             {
-                "candidate_name": "SADIA BIBI",
-                "roll_no": "253149",
-                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL :",
+                "candidate_name": "TABEER FATIMA",
+                "roll_no": "237512",
+                "center_allotted": "74: GOVT. GIRLS H/S KOT ADU (5) (ROOMS)",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "COMPUTER SCI", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230391318604"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=237512"
             },
             {
-                "candidate_name": "SAMREEN BIBI",
-                "roll_no": "253232",
-                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL :",
+                "candidate_name": "WUSQA KHURSHEED",
+                "roll_no": "286005",
+                "center_allotted": "71: GOVT. GIRLS H/S KOT ADU (2) HALL",
                 "schedule": [
                     { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
                     { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "02:30 PM" },
+                    { "subject": "COMPUTER SCI", "date": "06/Apr/2026", "time": "02:00 PM" },
                     { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
                     { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "02:00 PM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "02:00 PM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230351814424"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=286005"
             },
             {
-                "candidate_name": "TAYYABA BIBI",
-                "roll_no": "253339",
-                "center_allotted": "72: GOVT. GIRLS H/S MOCHI WALA KOT ADU (3) :HALL",
+                "candidate_name": "AYAT ZARISH",
+                "roll_no": "237493",
+                "center_allotted": "73: GOVT. GRADUATE COLLEGE FOR WOMEN KOT ADU (4) (ROOMS)",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "COMPUTER SCI", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3230314173144"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=237493"
             },
             {
-                "candidate_name": "ZAINAB BIBI",
-                "roll_no": "253439",
-                "center_allotted": "72: GOVT. GIRLS H/S MOCHI WALA KOT ADU (3) :HALL",
+                "candidate_name": "KINZA",
+                "roll_no": "237463",
+                "center_allotted": "70: GOVT. GRADUATE COLLEGE FOR WOMEN KOT ADU (1) (HALL)",
                 "schedule": [
-                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "02:00 PM" },
-                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "TARJAMA-TUL-QURAN-UL-MAJEED", "date": "03/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "BIOLOGY", "date": "06/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "02:30 PM" },
-                    { "subject": "MATHEMATICS (SCIENCE GROUP)", "date": "13/Apr/2026", "time": "02:00 PM" },
-                    { "subject": "PAKISTAN STUDIES (COMP)", "date": "15/Apr/2026", "time": "02:00 PM" }
+                    { "subject": "ENGLISH (COMP)", "date": "30/Mar/2026", "time": "09:00 AM" },
+                    { "subject": "PHYSICS", "date": "01/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "TARJAMA-TUL-QURAN", "date": "03/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "COMPUTER SCI", "date": "06/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "CHEMISTRY", "date": "08/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "URDU (COMP)", "date": "10/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "MATH (SCIENCE)", "date": "13/Apr/2026", "time": "09:00 AM" },
+                    { "subject": "PAK STUDIES", "date": "15/Apr/2026", "time": "09:00 AM" }
                 ],
-                "qr_code": "https://registration.bisederaghazikhan.com/Class10th/Admission/Slip/RollNoSlipQRVerify.aspx?VQRCode=3250104195032"
+                "qr_code": "https://registration.bisederaghazikhan.com/verify?id=237463"
             }
         ];
 
-        function displayCandidates(candidates) {
+        function displayCandidates(data) {
             const container = document.getElementById('candidatesContainer');
-            
-            if (candidates.length === 0) {
-                container.innerHTML = '<div class="no-results"><h2>No candidates found</h2><p>Try searching with a different name or roll number.</p></div>';
-                return;
-            }
-
-            container.innerHTML = candidates.map(candidate => `
+            container.innerHTML = data.length > 0 ? data.map(candidate => `
                 <div class="candidate-card">
                     <h3>${candidate.candidate_name}</h3>
-                    
                     <div class="candidate-info">
-                        <label>Roll Number:</label>
-                        <p><strong>${candidate.roll_no}</strong></p>
+                        <label>Roll Number</label>
+                        <p>${candidate.roll_no}</p>
                     </div>
-                    
                     <div class="candidate-info">
-                        <label>Exam Center:</label>
+                        <label>Exam Center</label>
                         <p>${candidate.center_allotted}</p>
                     </div>
                     
-                    <div class="candidate-info">
-                        <label>Exam Schedule:</label>
-                        <table class="schedule-table">
-                            <thead>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${candidate.schedule.map(exam => `
                                 <tr>
-                                    <th>Subject</th>
-                                    <th>Date</th>
-                                    <th>Time</th>
+                                    <td>${exam.subject}</td>
+                                    <td>${exam.date}</td>
+                                    <td>${exam.time}</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                ${candidate.schedule.map(exam => `
-                                    <tr>
-                                        <td>${exam.subject}</td>
-                                        <td>${exam.date}</td>
-                                        <td>${exam.time}</td>
-                                    </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
-                    </div>
+                            `).join('')}
+                        </tbody>
+                    </table>
                     
-                    <a href="${candidate.qr_code}" target="_blank" class="qr-link">🔗 Verify QR Code</a>
+                    <a href="${candidate.qr_code}" target="_blank" class="qr-link">🔍 Verify Roll Slip</a>
+                    <button class="print-button" onclick="window.print()">Print This Slip</button>
                 </div>
-            `).join('');
+            `).join('') : '<div class="no-results">No candidates found matching your search.</div>';
         }
 
         function searchCandidates() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
-            
-            if (!query) {
-                displayCandidates([]);
-                return;
-            }
-
-            const results = candidatesData.filter(candidate => 
-                candidate.candidate_name.toLowerCase().includes(query) ||
-                candidate.roll_no.includes(query)
+            const results = candidatesData.filter(c => 
+                c.candidate_name.toLowerCase().includes(query) || 
+                c.roll_no.includes(query)
             );
-
             displayCandidates(results);
         }
 
         function clearSearch() {
             document.getElementById('searchInput').value = '';
-            displayCandidates([]);
+            displayCandidates(candidatesData);
         }
 
-        // Allow search on Enter key
-        document.getElementById('searchInput').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                searchCandidates();
-            }
-        });
-
-        // Display all candidates on page load
-        window.addEventListener('load', function() {
-            displayCandidates(candidatesData);
-        });
+        // Initialize display
+        window.onload = () => displayCandidates(candidatesData);
     </script>
 </body>
 </html>

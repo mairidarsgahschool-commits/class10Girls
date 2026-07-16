@@ -1,1 +1,56 @@
-Nothing needs to be added to .gitignore since only a source file (index.html) was modified and there are no build artifacts, dependencies, or temporary files in the changes.
+```gitignore
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+dist/
+build/
+target/
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+.env
+.env.local
+.env.*
+.julia/
+zig*/
+.gradle/
+.mypy_cache/
+.pytest_cache/
+coverage/
+htmlcov/
+.coverage
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Editors
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+```
+
+Wait, let me recheck the input files:
+- Added: ['app.js', 'styles.css']
+- Modified: ['index.html']
+
+These are all source code files (.js, .css, .html), not build artifacts or dependencies. No files in the change list match the patterns for compiled files, dependency directories, editor files, system files, or compressed files.
+
+Since only source/config files were added/modified and no build artifacts or dependencies are present, the output should be empty.
+
+(empty — output nothing)

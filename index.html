@@ -3,619 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduVerse Academy - Experience world-class online education with interactive live classes, expert instructors, and personalized learning paths.">
     <title>EduVerse Academy - Online Learning Excellence</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #4F46E5;
-            --primary-dark: #4338CA;
-            --secondary: #06B6D4;
-            --accent: #F59E0B;
-            --dark: #1E293B;
-            --light: #F8FAFC;
-            --success: #10B981;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background: white;
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 100px 5% 50px;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--primary);
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image svg {
-            width: 100%;
-            max-width: 500px;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 100px 5%;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: #64748B;
-            font-size: 1.1rem;
-        }
-
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--light);
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        .feature-card p {
-            color: #64748B;
-        }
-
-        /* Courses Section */
-        .courses {
-            padding: 100px 5%;
-            background: #F1F5F9;
-        }
-
-        .courses-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .course-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .course-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-        }
-
-        .course-content {
-            padding: 25px;
-        }
-
-        .course-tag {
-            background: var(--accent);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .course-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .course-card p {
-            color: #64748B;
-            margin-bottom: 20px;
-        }
-
-        .course-meta {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 20px;
-            border-top: 1px solid #E2E8F0;
-            color: #64748B;
-        }
-
-        /* Live Classes Section */
-        .live-classes {
-            padding: 100px 5%;
-            background: white;
-        }
-
-        .class-schedule {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .schedule-item {
-            display: grid;
-            grid-template-columns: 150px 1fr 200px;
-            gap: 30px;
-            padding: 25px;
-            background: var(--light);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            align-items: center;
-            transition: all 0.3s;
-        }
-
-        .schedule-item:hover {
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .class-time {
-            text-align: center;
-        }
-
-        .class-time .time {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        .class-time .period {
-            color: #64748B;
-        }
-
-        .class-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .class-info p {
-            color: #64748B;
-        }
-
-        .instructor {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .instructor-avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .btn-join {
-            background: var(--success);
-            color: white;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-join:hover {
-            background: #059669;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 80px 5%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 5%;
-            background: var(--light);
-        }
-
-        .testimonial-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .testimonial-card .stars {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-card blockquote {
-            font-size: 1.1rem;
-            color: #475569;
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .author-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            color: #64748B;
-            font-size: 0.9rem;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 100px 5%;
-            background: var(--dark);
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        footer {
-            background: #0F172A;
-            color: white;
-            padding: 60px 5% 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section a {
-            color: #94A3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #94A3B8;
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-image {
-                order: -1;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .schedule-item {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .instructor {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <a href="#" class="logo">🎓 EduVerse Academy</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#features">Features</a></li>
@@ -626,307 +29,323 @@
         <a href="#enroll" class="btn-primary">Enroll Now</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>The Future of Online Learning is Here</h1>
-                <p>Experience world-class education from anywhere. Interactive live classes, expert instructors, and personalized learning paths designed for your success.</p>
-                <div class="hero-buttons">
-                    <a href="#courses" class="btn-primary">Explore Courses</a>
-                    <a href="#live-classes" class="btn-secondary">Join Free Trial</a>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 id="hero-title">The Future of Online Learning is Here</h1>
+                    <p>Experience world-class education from anywhere. Interactive live classes, expert instructors, and personalized learning paths designed for your success.</p>
+                    <div class="hero-buttons">
+                        <a href="#courses" class="btn-primary">Explore Courses</a>
+                        <a href="#live-classes" class="btn-secondary">Join Free Trial</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Online learning illustration">
+                        <rect x="50" y="50" width="400" height="300" rx="20" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="3"/>
+                        <rect x="70" y="70" width="360" height="200" rx="10" fill="rgba(255,255,255,0.2)"/>
+                        <circle cx="250" cy="170" r="40" fill="white" opacity="0.3"/>
+                        <rect x="100" y="300" width="150" height="30" rx="15" fill="rgba(255,255,255,0.3)"/>
+                        <rect x="270" y="300" width="130" height="30" rx="15" fill="rgba(255,255,255,0.3)"/>
+                        <circle cx="80" cy="80" r="10" fill="#EF4444"/>
+                        <circle cx="110" cy="80" r="10" fill="#F59E0B"/>
+                        <circle cx="140" cy="80" r="10" fill="#10B981"/>
+                    </svg>
                 </div>
             </div>
-            <div class="hero-image">
-                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="50" y="50" width="400" height="300" rx="20" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="3"/>
-                    <rect x="70" y="70" width="360" height="200" rx="10" fill="rgba(255,255,255,0.2)"/>
-                    <circle cx="250" cy="170" r="40" fill="white" opacity="0.3"/>
-                    <rect x="100" y="300" width="150" height="30" rx="15" fill="rgba(255,255,255,0.3)"/>
-                    <rect x="270" y="300" width="130" height="30" rx="15" fill="rgba(255,255,255,0.3)"/>
-                    <circle cx="80" cy="80" r="10" fill="#EF4444"/>
-                    <circle cx="110" cy="80" r="10" fill="#F59E0B"/>
-                    <circle cx="140" cy="80" r="10" fill="#10B981"/>
-                </svg>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="section-title">
-            <h2>Why Choose EduVerse?</h2>
-            <p>Discover the features that make our online learning platform exceptional</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📹</div>
-                <h3>Live Interactive Classes</h3>
-                <p>Engage in real-time with instructors and classmates through our advanced video conferencing system</p>
+        <!-- Features Section -->
+        <section class="features" id="features" aria-labelledby="features-title">
+            <div class="section-title">
+                <h2 id="features-title">Why Choose EduVerse?</h2>
+                <p>Discover the features that make our online learning platform exceptional</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">👨‍🏫</div>
-                <h3>Expert Instructors</h3>
-                <p>Learn from industry professionals and experienced educators passionate about teaching</p>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📹</div>
+                    <h3>Live Interactive Classes</h3>
+                    <p>Engage in real-time with instructors and classmates through our advanced video conferencing system</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">👨‍🏫</div>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals and experienced educators passionate about teaching</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📱</div>
+                    <h3>Learn Anywhere</h3>
+                    <p>Access your courses on any device - desktop, tablet, or mobile - anytime, anywhere</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your learning journey with detailed analytics and personalized insights</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🏆</div>
+                    <h3>Certifications</h3>
+                    <p>Earn recognized certificates upon course completion to boost your career prospects</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">💬</div>
+                    <h3>24/7 Support</h3>
+                    <p>Get help whenever you need it with our round-the-clock student support team</p>
+                </article>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Learn Anywhere</h3>
-                <p>Access your courses on any device - desktop, tablet, or mobile - anytime, anywhere</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Progress Tracking</h3>
-                <p>Monitor your learning journey with detailed analytics and personalized insights</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏆</div>
-                <h3>Certifications</h3>
-                <p>Earn recognized certificates upon course completion to boost your career prospects</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💬</div>
-                <h3>24/7 Support</h3>
-                <p>Get help whenever you need it with our round-the-clock student support team</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Courses Section -->
-    <section class="courses" id="courses">
-        <div class="section-title">
-            <h2>Popular Courses</h2>
-            <p>Explore our wide range of courses designed for modern learners</p>
-        </div>
-        <div class="courses-grid">
-            <div class="course-card">
-                <div class="course-image">💻</div>
-                <div class="course-content">
-                    <span class="course-tag">Programming</span>
-                    <h3>Full Stack Web Development</h3>
-                    <p>Master HTML, CSS, JavaScript, React, Node.js and build real-world projects</p>
-                    <div class="course-meta">
-                        <span>⏱️ 12 Weeks</span>
-                        <span>👥 2,450 Students</span>
-                    </div>
-                </div>
+        <!-- Courses Section -->
+        <section class="courses" id="courses" aria-labelledby="courses-title">
+            <div class="section-title">
+                <h2 id="courses-title">Popular Courses</h2>
+                <p>Explore our wide range of courses designed for modern learners</p>
             </div>
-            <div class="course-card">
-                <div class="course-image">📊</div>
-                <div class="course-content">
-                    <span class="course-tag">Data Science</span>
-                    <h3>Data Science & Analytics</h3>
-                    <p>Learn Python, SQL, Machine Learning and data visualization techniques</p>
-                    <div class="course-meta">
-                        <span>⏱️ 10 Weeks</span>
-                        <span>👥 1,890 Students</span>
+            <div class="courses-grid">
+                <article class="course-card">
+                    <div class="course-image" aria-hidden="true">💻</div>
+                    <div class="course-content">
+                        <span class="course-tag">Programming</span>
+                        <h3>Full Stack Web Development</h3>
+                        <p>Master HTML, CSS, JavaScript, React, Node.js and build real-world projects</p>
+                        <dl class="course-meta">
+                            <dt>Duration:</dt>
+                            <dd>⏱️ 12 Weeks</dd>
+                            <dt>Students:</dt>
+                            <dd>👥 2,450 Students</dd>
+                        </dl>
                     </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image">🎨</div>
-                <div class="course-content">
-                    <span class="course-tag">Design</span>
-                    <h3>UI/UX Design Masterclass</h3>
-                    <p>Create stunning user interfaces and experiences with Figma and Adobe XD</p>
-                    <div class="course-meta">
-                        <span>⏱️ 8 Weeks</span>
-                        <span>👥 1,560 Students</span>
+                </article>
+                <article class="course-card">
+                    <div class="course-image" aria-hidden="true">📊</div>
+                    <div class="course-content">
+                        <span class="course-tag">Data Science</span>
+                        <h3>Data Science & Analytics</h3>
+                        <p>Learn Python, SQL, Machine Learning and data visualization techniques</p>
+                        <dl class="course-meta">
+                            <dt>Duration:</dt>
+                            <dd>⏱️ 10 Weeks</dd>
+                            <dt>Students:</dt>
+                            <dd>👥 1,890 Students</dd>
+                        </dl>
                     </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image">📈</div>
-                <div class="course-content">
-                    <span class="course-tag">Business</span>
-                    <h3>Digital Marketing Pro</h3>
-                    <p>Master SEO, social media marketing, content strategy and paid advertising</p>
-                    <div class="course-meta">
-                        <span>⏱️ 6 Weeks</span>
-                        <span>👥 2,100 Students</span>
+                </article>
+                <article class="course-card">
+                    <div class="course-image" aria-hidden="true">🎨</div>
+                    <div class="course-content">
+                        <span class="course-tag">Design</span>
+                        <h3>UI/UX Design Masterclass</h3>
+                        <p>Create stunning user interfaces and experiences with Figma and Adobe XD</p>
+                        <dl class="course-meta">
+                            <dt>Duration:</dt>
+                            <dd>⏱️ 8 Weeks</dd>
+                            <dt>Students:</dt>
+                            <dd>👥 1,560 Students</dd>
+                        </dl>
                     </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image">🤖</div>
-                <div class="course-content">
-                    <span class="course-tag">AI & ML</span>
-                    <h3>Artificial Intelligence Fundamentals</h3>
-                    <p>Dive into AI, neural networks, deep learning and practical applications</p>
-                    <div class="course-meta">
-                        <span>⏱️ 14 Weeks</span>
-                        <span>👥 1,320 Students</span>
+                </article>
+                <article class="course-card">
+                    <div class="course-image" aria-hidden="true">📈</div>
+                    <div class="course-content">
+                        <span class="course-tag">Business</span>
+                        <h3>Digital Marketing Pro</h3>
+                        <p>Master SEO, social media marketing, content strategy and paid advertising</p>
+                        <dl class="course-meta">
+                            <dt>Duration:</dt>
+                            <dd>⏱️ 6 Weeks</dd>
+                            <dt>Students:</dt>
+                            <dd>👥 2,100 Students</dd>
+                        </dl>
                     </div>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image">🌐</div>
-                <div class="course-content">
-                    <span class="course-tag">Language</span>
-                    <h3>Business English Communication</h3>
-                    <p>Improve your professional English skills for global business environments</p>
-                    <div class="course-meta">
-                        <span>⏱️ 8 Weeks</span>
-                        <span>👥 3,200 Students</span>
+                </article>
+                <article class="course-card">
+                    <div class="course-image" aria-hidden="true">🤖</div>
+                    <div class="course-content">
+                        <span class="course-tag">AI & ML</span>
+                        <h3>Artificial Intelligence Fundamentals</h3>
+                        <p>Dive into AI, neural networks, deep learning and practical applications</p>
+                        <dl class="course-meta">
+                            <dt>Duration:</dt>
+                            <dd>⏱️ 14 Weeks</dd>
+                            <dt>Students:</dt>
+                            <dd>👥 1,320 Students</dd>
+                        </dl>
                     </div>
-                </div>
+                </article>
+                <article class="course-card">
+                    <div class="course-image" aria-hidden="true">🌐</div>
+                    <div class="course-content">
+                        <span class="course-tag">Language</span>
+                        <h3>Business English Communication</h3>
+                        <p>Improve your professional English skills for global business environments</p>
+                        <dl class="course-meta">
+                            <dt>Duration:</dt>
+                            <dd>⏱️ 8 Weeks</dd>
+                            <dt>Students:</dt>
+                            <dd>👥 3,200 Students</dd>
+                        </dl>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Live Classes Section -->
-    <section class="live-classes" id="live-classes">
-        <div class="section-title">
-            <h2>Today's Live Classes</h2>
-            <p>Join our interactive live sessions and learn in real-time</p>
-        </div>
-        <div class="class-schedule">
-            <div class="schedule-item">
-                <div class="class-time">
-                    <div class="time">09:00 AM</div>
-                    <div class="period">Morning</div>
-                </div>
-                <div class="class-info">
-                    <h3>Introduction to Python Programming</h3>
-                    <p>Beginner Level • Module 1: Getting Started</p>
-                    <div class="instructor">
-                        <div class="instructor-avatar">JD</div>
-                        <span>Dr. John Doe</span>
-                    </div>
-                </div>
-                <button class="btn-join">Join Now</button>
+        <!-- Live Classes Section -->
+        <section class="live-classes" id="live-classes" aria-labelledby="live-classes-title">
+            <div class="section-title">
+                <h2 id="live-classes-title">Today's Live Classes</h2>
+                <p>Join our interactive live sessions and learn in real-time</p>
             </div>
-            <div class="schedule-item">
-                <div class="class-time">
-                    <div class="time">11:30 AM</div>
-                    <div class="period">Morning</div>
-                </div>
-                <div class="class-info">
-                    <h3>Advanced JavaScript Concepts</h3>
-                    <p>Intermediate Level • Module 5: Async Programming</p>
-                    <div class="instructor">
-                        <div class="instructor-avatar">SS</div>
-                        <span>Sarah Smith</span>
+            <div class="class-schedule">
+                <article class="schedule-item">
+                    <div class="class-time">
+                        <time datetime="09:00" class="time">09:00 AM</time>
+                        <span class="period">Morning</span>
                     </div>
-                </div>
-                <button class="btn-join">Join Now</button>
-            </div>
-            <div class="schedule-item">
-                <div class="class-time">
-                    <div class="time">02:00 PM</div>
-                    <div class="period">Afternoon</div>
-                </div>
-                <div class="class-info">
-                    <h3>Data Visualization with Tableau</h3>
-                    <p>Intermediate Level • Module 3: Dashboard Design</p>
-                    <div class="instructor">
-                        <div class="instructor-avatar">MJ</div>
-                        <span>Michael Johnson</span>
+                    <div class="class-info">
+                        <h3>Introduction to Python Programming</h3>
+                        <p>Beginner Level • Module 1: Getting Started</p>
+                        <div class="instructor">
+                            <div class="instructor-avatar" aria-hidden="true">JD</div>
+                            <span>Dr. John Doe</span>
+                        </div>
                     </div>
-                </div>
-                <button class="btn-join">Join Now</button>
-            </div>
-            <div class="schedule-item">
-                <div class="class-time">
-                    <div class="time">04:30 PM</div>
-                    <div class="period">Evening</div>
-                </div>
-                <div class="class-info">
-                    <h3>UI Design Principles & Best Practices</h3>
-                    <p>Beginner Level • Module 2: Color Theory</p>
-                    <div class="instructor">
-                        <div class="instructor-avatar">EW</div>
-                        <span>Emily Wilson</span>
+                    <button class="btn-join" type="button" aria-label="Join Introduction to Python Programming class">Join Now</button>
+                </article>
+                <article class="schedule-item">
+                    <div class="class-time">
+                        <time datetime="11:30" class="time">11:30 AM</time>
+                        <span class="period">Morning</span>
                     </div>
-                </div>
-                <button class="btn-join">Join Now</button>
+                    <div class="class-info">
+                        <h3>Advanced JavaScript Concepts</h3>
+                        <p>Intermediate Level • Module 5: Async Programming</p>
+                        <div class="instructor">
+                            <div class="instructor-avatar" aria-hidden="true">SS</div>
+                            <span>Sarah Smith</span>
+                        </div>
+                    </div>
+                    <button class="btn-join" type="button" aria-label="Join Advanced JavaScript Concepts class">Join Now</button>
+                </article>
+                <article class="schedule-item">
+                    <div class="class-time">
+                        <time datetime="14:00" class="time">02:00 PM</time>
+                        <span class="period">Afternoon</span>
+                    </div>
+                    <div class="class-info">
+                        <h3>Data Visualization with Tableau</h3>
+                        <p>Intermediate Level • Module 3: Dashboard Design</p>
+                        <div class="instructor">
+                            <div class="instructor-avatar" aria-hidden="true">MJ</div>
+                            <span>Michael Johnson</span>
+                        </div>
+                    </div>
+                    <button class="btn-join" type="button" aria-label="Join Data Visualization with Tableau class">Join Now</button>
+                </article>
+                <article class="schedule-item">
+                    <div class="class-time">
+                        <time datetime="16:30" class="time">04:30 PM</time>
+                        <span class="period">Evening</span>
+                    </div>
+                    <div class="class-info">
+                        <h3>UI Design Principles & Best Practices</h3>
+                        <p>Beginner Level • Module 2: Color Theory</p>
+                        <div class="instructor">
+                            <div class="instructor-avatar" aria-hidden="true">EW</div>
+                            <span>Emily Wilson</span>
+                        </div>
+                    </div>
+                    <button class="btn-join" type="button" aria-label="Join UI Design Principles class">Join Now</button>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>50K+</h3>
-                <p>Active Students</p>
+        <!-- Stats Section -->
+        <section class="stats" aria-labelledby="stats-title">
+            <h2 id="stats-title" class="visually-hidden">Platform Statistics</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>50K+</h3>
+                    <p>Active Students</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Expert Instructors</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Premium Courses</p>
+                </div>
+                <div class="stat-item">
+                    <h3>95%</h3>
+                    <p>Success Rate</p>
+                </div>
             </div>
-            <div class="stat-item">
-                <h3>200+</h3>
-                <p>Expert Instructors</p>
-            </div>
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Premium Courses</p>
-            </div>
-            <div class="stat-item">
-                <h3>95%</h3>
-                <p>Success Rate</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="section-title">
-            <h2>What Our Students Say</h2>
-            <p>Real stories from real learners who transformed their careers</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <blockquote>"EduVerse completely changed my career path. The web development course was comprehensive, and the instructors were incredibly supportive. I landed my dream job within 3 months of completion!"</blockquote>
-                <div class="testimonial-author">
-                    <div class="author-avatar">AK</div>
-                    <div class="author-info">
-                        <h4>Ahmed Khan</h4>
-                        <p>Full Stack Developer at TechCorp</p>
-                    </div>
-                </div>
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+            <div class="section-title">
+                <h2 id="testimonials-title">What Our Students Say</h2>
+                <p>Real stories from real learners who transformed their careers</p>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <blockquote>"The flexibility of online learning combined with live interaction made all the difference. I could balance my job while upskilling. Highly recommend the Data Science program!"</blockquote>
-                <div class="testimonial-author">
-                    <div class="author-avatar">FA</div>
-                    <div class="author-info">
-                        <h4>Fatima Ali</h4>
-                        <p>Data Analyst at DataInsights</p>
+            <div class="testimonial-grid">
+                <article class="testimonial-card">
+                    <div class="stars" role="img" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"EduVerse completely changed my career path. The web development course was comprehensive, and the instructors were incredibly supportive. I landed my dream job within 3 months of completion!"</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">AK</div>
+                        <div class="author-info">
+                            <h4>Ahmed Khan</h4>
+                            <p>Full Stack Developer at TechCorp</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <blockquote>"As a working parent, finding time for education was challenging. EduVerse's recorded sessions and flexible schedule made it possible. The UI/UX course exceeded my expectations!"</blockquote>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MH</div>
-                    <div class="author-info">
-                        <h4>Maria Hassan</h4>
-                        <p>Freelance UI Designer</p>
+                </article>
+                <article class="testimonial-card">
+                    <div class="stars" role="img" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"The flexibility of online learning combined with live interaction made all the difference. I could balance my job while upskilling. Highly recommend the Data Science program!"</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">FA</div>
+                        <div class="author-info">
+                            <h4>Fatima Ali</h4>
+                            <p>Data Analyst at DataInsights</p>
+                        </div>
                     </div>
-                </div>
+                </article>
+                <article class="testimonial-card">
+                    <div class="stars" role="img" aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"As a working parent, finding time for education was challenging. EduVerse's recorded sessions and flexible schedule made it possible. The UI/UX course exceeded my expectations!"</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" aria-hidden="true">MH</div>
+                        <div class="author-info">
+                            <h4>Maria Hassan</h4>
+                            <p>Freelance UI Designer</p>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="enroll">
-        <h2>Ready to Start Your Learning Journey?</h2>
-        <p>Join thousands of students already learning with EduVerse. Sign up today and get 7 days of unlimited access free!</p>
-        <a href="#" class="btn-primary" style="font-size: 1.2rem; padding: 15px 50px;">Get Started Free</a>
-    </section>
+        <!-- CTA Section -->
+        <section class="cta" id="enroll" aria-labelledby="cta-title">
+            <h2 id="cta-title">Ready to Start Your Learning Journey?</h2>
+            <p>Join thousands of students already learning with EduVerse. Sign up today and get 7 days of unlimited access free!</p>
+            <a href="#" class="btn-primary cta-button">Get Started Free</a>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>🎓 EduVerse Academy</h3>
-                <p style="color: #94A3B8; margin-bottom: 20px;">Empowering learners worldwide through innovative online education. Your future starts here.</p>
+                <p class="footer-description">Empowering learners worldwide through innovative online education. Your future starts here.</p>
                 <div class="social-links">
-                    <a href="#">📘</a>
-                    <a href="#">🐦</a>
-                    <a href="#">📸</a>
-                    <a href="#">💼</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
                 </div>
             </div>
             <div class="footer-section">
@@ -951,79 +370,19 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <ul>
-                    <li>📧 support@eduverse.com</li>
-                    <li>📞 +1 (555) 123-4567</li>
-                    <li>💬 Live Chat Available</li>
-                    <li>🕒 24/7 Support</li>
-                </ul>
+                <address class="contact-info">
+                    <p>📧 <a href="mailto:support@eduverse.com">support@eduverse.com</a></p>
+                    <p>📞 <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                    <p>💬 Live Chat Available</p>
+                    <p>🕒 24/7 Support</p>
+                </address>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 EduVerse Academy. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 EduVerse Academy. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-            } else {
-                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Animate stats on scroll
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.stat-item, .feature-card, .course-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-
-        // Join button functionality
-        document.querySelectorAll('.btn-join').forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.textContent = '✓ Joined!';
-                this.style.background = '#059669';
-                setTimeout(() => {
-                    this.textContent = 'Join Now';
-                    this.style.background = '';
-                }, 2000);
-            });
-        });
-
-        console.log('🎓 EduVerse Academy - Online Learning Platform Loaded Successfully!');
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
